@@ -33,6 +33,9 @@ const products = (idCategory)=> {
 }
 
 const start = () =>{
+
+    startPreloader();
+
     store()
         .then(store=>{
             console.log(store);
@@ -50,7 +53,11 @@ const start = () =>{
         .catch(error => {
             console.log(error);
         })
+        .finally(()=>{
+            endPreloader()
+        })
 }
+
 
 /*
 {id: 1, name: "Magazine XPTO"}

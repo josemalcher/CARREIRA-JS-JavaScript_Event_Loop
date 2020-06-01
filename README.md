@@ -169,6 +169,17 @@ __proto__: Array(0)
 ```
 
 #### 04 - Preloader com Promises no JavaScript
+
+```js
+const preloader = document.getElementById('preloader');
+const startPreloader = () =>{
+    preloader.style.display = 'block';
+}
+const endPreloader = ()=>{
+    preloader.style.display = "none";
+}
+```
+
 #### 05 - JavaScript Async wait
 
 [Voltar ao Índice](#indice)
