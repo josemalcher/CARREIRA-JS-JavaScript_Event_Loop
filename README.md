@@ -281,6 +281,26 @@ const searchCep = (event) => {
 ```
 
 #### 03 - Consultar API com Ajax em JavaScript
+
+```js
+const result = document.getElementById('results');
+const showResult = (addressJSON) => {
+    result.style.display = 'block';
+
+    const html = `
+        <ul class="list-group">
+            <li class="list-group-item"><strong>CEP: ${addressJSON.code}</strong></li>
+            <li class="list-group-item"><strong>Cidade: ${addressJSON.city}</strong></li>
+            <li class="list-group-item"><strong>Estado: ${addressJSON.state}</strong></li>
+            <li class="list-group-item"><strong>Rua: ${addressJSON.district}</strong></li>
+        </ul>
+    `;
+
+    result.innerHTML = html;
+
+}
+```
+
 #### 04 - Melhorias Projeto Busca CEP com AJAX no JavaScript
 #### 05 - Consultar API com Ajax com async e await no JavaScript
 
