@@ -244,6 +244,42 @@ const start = async () => {
 
 #### 01 - Preparar Projeto JavaScript - stop event default
 #### 02 - Consultar API com Ajax e Promises JavaScript
+
+```js
+const config = {
+    method: 'GET'
+}
+
+const searchCep = (event) => {
+
+    const cep = document.getElementById('cep').value || '0000000';
+
+    fetch(`https://apps.widenet.com.br/busca-cep/api/cep/${cep}.json` , config)
+
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+
+            if(data.status === 400) throw data.message;
+
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+
+    /* Stop event default for all browsers*/
+    event = event || window.event;
+    if(event.preventDefault) event.preventDefault();
+    if(event.preventValue) event.preventValue();
+    return false;
+
+
+}
+```
+
 #### 03 - Consultar API com Ajax em JavaScript
 #### 04 - Melhorias Projeto Busca CEP com AJAX no JavaScript
 #### 05 - Consultar API com Ajax com async e await no JavaScript
